@@ -10,4 +10,4 @@ avoid using obvious method reverse to build this function
 Using a split method seemd like the option that would take the least amount of code and be the most 'dry'. I built a function using split then built another function acheiving the same result with a while loop. 
 
 ## Solution
-<img
+![white boarding reverse array with a while loop function](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/reverse_array.jpg)
