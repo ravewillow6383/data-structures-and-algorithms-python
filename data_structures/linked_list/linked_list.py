@@ -11,12 +11,16 @@ class LinkedList:
     if self.head == None:
       return False    
     while True:
-      if current.value == val:
-        return True
-      if current.next != None:
-        current = current.next
-      else:
-        return False
+      try:
+        if current.value == val:
+          return True
+        if current.next != None:
+          current = current.next
+        else:
+          return False
+      except:
+          print('Unepected error!')
+          raise
       
   def __str__(self):
     if self.head == None:
@@ -25,12 +29,16 @@ class LinkedList:
     current = self.head
     list_result = ''
     while True:
-      if current.next != None:
-        list_result += f'{current.value} '
-        current = current.next
-      else:
-        list_result += f'{current.value} '
-        return list_result
+      try:
+        if current.next != None:
+          list_result += f'{current.value} '
+          current = current.next
+        else:
+          list_result += f'{current.value} '
+          return list_result
+      except:
+        print('Unexpected error!')
+        raise
       
 class Node:
   def __init__(self, value, next):

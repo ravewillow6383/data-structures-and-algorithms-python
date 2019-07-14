@@ -1,11 +1,17 @@
 # Singly Linked List
-<!-- Short summary or background information -->
+Create singly linked list using Classes.
 
 ## Challenge
-<!-- Description of the challenge -->
+Can successfully instantiate an empty linked list
+Can properly insert into the linked list
+The head property will properly point to the first node in the linked list
+Can properly insert multiple nodes into the linked list
+Will return true when finding a value within the linked list that exists
+Will return false when searching for a value in the linked list that does not exist
+Can properly return a collection of all the values that exist in the linked list
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Created a class for the Linked list then a sub class for the node. Created methods inside of classes to start and build a linked list, also to be able to iterate over linked list to check for values. 
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
+No APIs used
