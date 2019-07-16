@@ -15,3 +15,15 @@ Created a class for the Linked list then a sub class for the node. Created metho
 
 ## API
 No APIs used
+
+# Singly Linked List day 2 - 7/16/2019
+able to add 3 new methods to insert node at end of LL, insert before a given value and insert after a given value.
+
+## Challenge
+
+
+## Approach & Efficiency
+Created a class for the Linked list then a sub class for the node. Created methods inside of classes to start and build a linked list, also to be able to iterate over linked list to check for values. 
+
+## API
+No APIs used
