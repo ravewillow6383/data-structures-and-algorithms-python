@@ -15,3 +15,21 @@ Created a class for the Linked list then a sub class for the node. Created metho
 
 ## API
 No APIs used
+
+# Singly Linked List day 2 - 7/16/2019
+able to add 3 new methods to insert node at end of LL, insert before a given value and insert after a given value.
+
+## Challenge
+
+
+## Approach & Efficiency
+Created a class for the Linked list then a sub class for the node. Created methods inside of classes to start and build a linked list, also to be able to iterate over linked list to check for values. 
+
+## API
+No APIs used
+
+![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/tree/master/data_structures/assets/ll_insertions_start.jpg)
+
+![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/tree/master/data_structures/assets/ll_insertions_mid.jpg)
+
+![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/tree/master/data_structures/assets/ll_insertions_last.jpg)
