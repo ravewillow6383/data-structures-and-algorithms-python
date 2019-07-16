@@ -27,3 +27,9 @@ Created a class for the Linked list then a sub class for the node. Created metho
 
 ## API
 No APIs used
+
+![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/tree/master/data_structures/assets/ll_insertions_start.jpg)
+
+![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/tree/master/data_structures/assets/ll_insertions_mid.jpg)
+
+![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/tree/master/data_structures/assets/ll_insertions_last.jpg)
