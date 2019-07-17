@@ -75,13 +75,20 @@ class LinkedList:
     while current.next:
       counter += 1
       current = current.next
-    n = (counter - k) - 1
-    counter_two = 0
-    current = self.head
-    while counter_two < n:
-      counter_two += 1
-      current = current.next
-    return current.next.value
+    breakpoint()
+    if counter <= k:
+      return 'Value Error'
+    if (counter - 1) == k:
+      return self.head.value
+    else:
+      n = (counter - k) - 1
+      counter_two = 0
+      current = self.head
+      while counter_two < n:
+        counter_two += 1
+        current = current.next
+      return current.next.value
+
     
   def insert_after(self, existing_value, new_value):
     new_node = Node(new_value, next)
