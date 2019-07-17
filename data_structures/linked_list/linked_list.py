@@ -61,13 +61,27 @@ class LinkedList:
       if self.head.value == existing_node:
           new_node.next = self.head
           self.head = new_node
-
-      while current.next:
+      current = self.head
+      while current.next != None:
           if current.next.value == existing_node:
-              new_node.next = current.next
-              current.next = new_node
-              return
+            new_node.next = current.next
+            current.next = new_node
+          return
       return 'No node'
+
+  def ll_kth_from_end(self, k):
+    counter = 0
+    current = self.head
+    while current.next:
+      counter += 1
+      current = current.next
+    n = (counter - k) - 1
+    counter_two = 0
+    current = self.head
+    while counter_two < n:
+      counter_two += 1
+      current = current.next
+    return current.next.value
     
   def insert_after(self, existing_value, new_value):
     new_node = Node(new_value, next)
@@ -75,9 +89,9 @@ class LinkedList:
 
     if current == None:
         return 'Not here'
-    if self.head.value == existing_value:
-        new_node.next = self.head.next
-        self.head.next = new_node
+    # if self.head.value == existing_value:
+    #     new_node.next = self.head.next
+    #     self.head.next = new_node
 
     while current:
         if current.value == existing_value:

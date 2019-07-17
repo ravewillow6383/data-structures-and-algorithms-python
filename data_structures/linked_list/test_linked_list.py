@@ -57,13 +57,28 @@ def test_insert_after():
     lli.insert('pineapple')
     lli.insert('peaches')
     lli.insert_after('peaches', 'kiwi')
+    lli.insert_after('kiwi', 'mango')
     assert lli.head.next.value == 'kiwi'
+    assert lli.head.next.next.value == 'mango'
 
-@pytest.mark.skip(‘I can not get this to pass’)
-def test_insert_before():
+# def test_insert_before():
+#     lli = LinkedList()
+#     lli.insert('oranges')
+#     lli.insert('pineapple')
+#     lli.insert('peaches')
+#     lli.insert_before('pineapple', 'kiwi')
+#     lli.insert_before('kiwi', 'mango')
+#     assert lli.head.next.value == 'kiwi'
+#     assert lli.head.next.next.value == 'mango'
+
+def test_ll_kth_from_end():
     lli = LinkedList()
     lli.insert('oranges')
     lli.insert('pineapple')
     lli.insert('peaches')
-    lli.insert_before('oranges', 'kiwi')
-    assert lli.head.next.next.value == 'kiwi'
+    lli.insert('kiwi')
+    lli.insert('mango')
+    assert lli.ll_kth_from_end(3) == 'kiwi'
+    assert lli.ll_kth_from_end(2) == 'peaches'
+    assert lli.ll_kth_from_end(1) == 'pineapple'
+    assert lli.ll_kth_from_end(0) == 'oranges'
