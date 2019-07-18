@@ -39,6 +39,20 @@ class LinkedList:
       except:
         print('Unexpected error!')
         raise
+  
+  def ll_merge(self, new_list): 
+    current_one = self.head
+    current_two = new_list.head
+
+    while current_one != None and current_two != None:
+      place_holder_one = current_one.next
+      place_holder_two = current_two.next
+
+      current_one = place_holder_two.next
+      current_two = place_holder_one.next
+    
+    new_list.head = current_two
+    return current_one
 
   def append(self, value):
     if self.head == None:
@@ -75,7 +89,7 @@ class LinkedList:
     while current.next:
       counter += 1
       current = current.next
-    breakpoint()
+    # breakpoint()
     if counter <= k:
       return 'Value Error'
     if (counter - 1) == k:
@@ -96,9 +110,6 @@ class LinkedList:
 
     if current == None:
         return 'Not here'
-    # if self.head.value == existing_value:
-    #     new_node.next = self.head.next
-    #     self.head.next = new_node
 
     while current:
         if current.value == existing_value:

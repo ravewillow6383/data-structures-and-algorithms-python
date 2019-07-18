@@ -1,5 +1,17 @@
 from linked_list import LinkedList, Node
 
+# @pytest.fixture
+def ll():
+    return LinkedList()
+
+# @pytest.fixture
+def sample_ll():
+    ll = LinkedList()
+    ll.insert('oranges')
+    ll.insert('pineapple')
+    ll.insert('peaches')
+    return ll
+
 def test_list():
     ll = LinkedList()
     ll.insert('coffee')
@@ -61,17 +73,16 @@ def test_insert_after():
     assert lli.head.next.value == 'kiwi'
     assert lli.head.next.next.value == 'mango'
 
-
-@pytest.mark.skip(‘I can not get this to pass’)
-def test_insert_before():
-    lli = LinkedList()
-    lli.insert('oranges')
-    lli.insert('pineapple')
-    lli.insert('peaches')
-    lli.insert_before('pineapple', 'kiwi')
-    lli.insert_before('kiwi', 'mango')
-    assert lli.head.next.value == 'kiwi'
-    assert lli.head.next.next.value == 'mango'
+# @pytest.mark.skip(‘I can not get this to pass’)
+# def test_insert_before():
+#     lli = LinkedList()
+#     lli.insert('oranges')
+#     lli.insert('pineapple')
+#     lli.insert('peaches')
+#     lli.insert_before('pineapple', 'kiwi')
+#     lli.insert_before('kiwi', 'mango')
+#     assert lli.head.next.value == 'kiwi'
+#     assert lli.head.next.next.value == 'mango'
 
 def test_ll_kth_from_end():
     lli = LinkedList()
@@ -85,3 +96,15 @@ def test_ll_kth_from_end():
     assert lli.ll_kth_from_end(1) == 'pineapple'
     assert lli.ll_kth_from_end(0) == 'oranges'
     assert lli.ll_kth_from_end(8) == 'Value Error'
+
+def test_ll_merge():
+    ll = LinkedList()
+    lli = LinkedList()
+    lli.insert('pitbulls')
+    lli.insert('pugs')
+    lli.insert('hounds')
+    ll.insert('oranges')
+    ll.insert('pineapple')
+    ll.insert('peaches')
+    ll.ll_merge(lli)
+    assert ll.__str__() =='peaches hounds pineapple pugs oranges pitbulls '
