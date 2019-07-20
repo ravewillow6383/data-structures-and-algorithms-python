@@ -5,38 +5,21 @@ class LinkedList:
   def insert(self, value):
     self.head = Node(value, self.head)
 
-  def ll_merge(self, new_list):
-    
-    current_one = self.head
-    current_two = new_list.head
+  def ll_merge(self, current_list, new_list):
+    head_holder = current_list.head
+    current = current_list.head
 
-    while current_one != None and current_two != None:
-      place_holder_one = current_one.next
-      place_holder_two = current_two.next
+    while current_list.head and new_list.head:
+        current_list.head = current_list.head.next
+        current.next = new_list.head
+        current = current.next
+        new_list.head = new_list.head.next
+        if current_list.head != None:
+            current.next = current_list.head
+            current = current.next
 
-      current_one = place_holder_two.next
-      current_two = place_holder_one.next
-    
-    new_list.head = current_two
-    return current_one
-
-  def __str__(self):
-    if self.head.value == None:
-      return 'You\'ve reached the end of the line'
-        
-    current = self.head
-    list_result = ''
-    while True:
-      try:
-        if current.next != None:
-          list_result += f'{current.value} '
-          current = current.next
-        else:
-          list_result += f'{current.value} '
-          return list_result
-      except:
-        print('Unexpected error!')
-        raise
+    current_list.head = head_holder
+    return current_list
 
 class Node:
   def __init__(self, value, next):

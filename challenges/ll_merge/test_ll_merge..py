@@ -1,26 +1,5 @@
 from ll_merge import LinkedList, Node
 
-
-# @pytest.fixture
-# def ll():
-#     return LinkedList()
-
-# @pytest.fixture
-# def sample_ll():
-#     ll = LinkedList()
-#     ll.insert('oranges')
-#     ll.insert('pineapple')
-#     ll.insert('peaches')
-#     return ll
-
-# @pytest.fixture
-# def sample_two_ll():
-#     ll = LinkedList()
-#     ll.insert('pitbulls')
-#     ll.insert('pugs')
-#     ll.insert('hounds')
-#     return ll
-
 def test_ll_merge():
     ll = LinkedList()
     lli = LinkedList()
@@ -30,7 +9,10 @@ def test_ll_merge():
     ll.insert('oranges')
     ll.insert('pineapple')
     ll.insert('peaches')
-    ll.ll_merge(lli)
-    assert ll.__str__() =='peaches hounds pineapple pugs oranges pitbulls '
-
-
+    merge_list = ll.ll_merge(ll, lli)
+    assert merge_list.head.value == 'peaches'
+    assert merge_list.head.next.value == 'hounds'
+    assert merge_list.head.next.next.value == 'pineapple'
+    assert merge_list.head.next.next.next.value == 'pugs'
+    assert merge_list.head.next.next.next.next.value == 'oranges'
+    assert merge_list.head.next.next.next.next.next.value == 'pitbulls'
