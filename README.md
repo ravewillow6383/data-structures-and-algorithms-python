@@ -102,7 +102,8 @@ On the white board I made a counter and traversed the list adding one to the cou
 Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Approach & Efficiency
-On the white board I made one 'placeholder' variable and assigned it the value of current.next, then assigned the current.next value to placeholder. As soon as I took my picture and erased the board I realized that my white boad solution wouldn't work. I think I need two 'placeholder' variables. Tammy started her turn on the whiteboard and realized her solution wouldn't work either. We ended up each grabbing a marker and brain storming together until we came up with a solution that I thought made sense at the time
+On the white board I made one 'placeholder' variable and assigned it the value of current.next, then assigned the current.next value to placeholder. As soon as I took my picture and erased the board I realized that my white boad solution wouldn't work. I think I need two 'placeholder' variables. Tammy started her turn on the whiteboard and realized her solution wouldn't work either. We ended up each grabbing a marker and brain storming together until we came up with a solution that I thought made sense at the time. I got home and tried it but it did not work, took quite a bit of tweaking to pass tests.
+
 
 ## Solution
 ![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/ll_merge_one.jpg)

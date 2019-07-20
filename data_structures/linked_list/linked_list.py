@@ -40,23 +40,9 @@ class LinkedList:
         print('Unexpected error!')
         raise
   
-  def ll_merge(self, new_list): 
-    current_one = self.head
-    current_two = new_list.head
-
-    while current_one != None and current_two != None:
-      place_holder_one = current_one.next
-      place_holder_two = current_two.next
-
-      current_one = place_holder_two.next
-      current_two = place_holder_one.next
-    
-    new_list.head = current_two
-    return current_one
-
   def append(self, value):
     if self.head == None:
-       self.head = Node(value, None)
+        self.head = Node(value, None)
     else:
       last_node = self.head
       while True:
