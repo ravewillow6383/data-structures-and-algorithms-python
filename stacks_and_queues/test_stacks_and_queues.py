@@ -28,16 +28,21 @@ def test_pop():
   assert testing.top.value is 'is'
   testing.pop()
   assert testing.top.value is 'talk'
+  testing.pop()
+  assert testing.top is None
 
+def test_peek():
+  testing = Stack()
+  testing.push('talk')
+  testing.push('is')
+  testing.push('cheap')
+  assert testing.peek() == 'cheap'
 
-
-
-# Can successfully push onto a stack
-# Can successfully push multiple values onto a stack
-# Can successfully pop off the stack
-# Can successfully empty a stack after multiple pops
-# Can successfully peek the next item on the stack
-# Can successfully instantiate an empty stack
+def test_peek_again():
+  testing = Stack()
+  testing.push('talk')
+  testing.push('is')
+  assert testing.peek() == 'is'
 # Can successfully enqueue into a queue
 # Can successfully enqueue multiple values into a queue
 # Can successfully dequeue out of a queue the expected value

@@ -1,13 +1,13 @@
 class Stack:
-    # Iterable is an object, which one can iterate over. It generates an Iterator when passed to iter() method
-  def __init__(self, iter=[]):
+
+  def __init__(self, container=[]):
     self.top = None
 
     try:
-        for item in iter:
+        for item in container:
             self.push(item)
     except TypeError:
-        print('Oh no! Please insert an iterable.')
+        print('Oh no! Please try again')
 
   def push(self, value):
     self.top = Node(value, self.top)
@@ -20,7 +20,15 @@ class Stack:
       return place_holder
     else:
       raise ValueError('This is an empty stack!')
+  
+  def peek(self):
+    if self.top.value != None:
+      return self.top.value
+    else:
+      raise ValueError('This is an empty stack!')
 
+class Queue:
+  
   
 class Node:
   def __init__(self, value, next=None):
