@@ -1,4 +1,4 @@
-from stacks_and_queues import Stack
+from stacks_and_queues import Stack, Queue
 import pytest
 
 def test_empty():
@@ -43,8 +43,23 @@ def test_peek_again():
   testing.push('talk')
   testing.push('is')
   assert testing.peek() == 'is'
-# Can successfully enqueue into a queue
-# Can successfully enqueue multiple values into a queue
+
+def test_enqueue():
+  testing = Queue()
+  testing.enqueue('fall')
+  assert testing.back.value is 'fall'
+
+def test_enqueue_again():
+  testing = Queue()
+  testing.enqueue('fall')
+  testing.enqueue('eight')
+  testing.enqueue('times')
+  testing.enqueue('stand')
+  testing.enqueue('up')
+  testing.enqueue('nine')
+  assert testing.back.value == 'nine'
+
+
 # Can successfully dequeue out of a queue the expected value
 # Can successfully peek into a queue, seeing the expected value
 # Can successfully empty a queue after multiple dequeues
