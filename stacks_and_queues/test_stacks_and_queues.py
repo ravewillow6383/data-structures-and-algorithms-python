@@ -10,7 +10,27 @@ def test_push():
   testing.push('talk')
   testing.push('is')
   testing.push('cheap')
-  assert testing.top is 'cheap'
+  assert testing.top.value is 'cheap'
+
+def test_push_again():
+  testing = Stack()
+  testing.push('talk')
+  testing.push('is')
+  assert testing.top.value is 'is'
+
+def test_pop():
+  testing = Stack()
+  testing.push('talk')
+  testing.push('is')
+  testing.push('cheap')
+  assert testing.top.value is 'cheap'
+  testing.pop()
+  assert testing.top.value is 'is'
+  testing.pop()
+  assert testing.top.value is 'talk'
+
+
+
 
 # Can successfully push onto a stack
 # Can successfully push multiple values onto a stack
