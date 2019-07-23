@@ -131,3 +131,17 @@ I used a similar approach I've learned in working with linked list. Creating a v
 
 ## API
 no APi used.
+
+## Implement a Queue using two Stacks. 7/22/2019 challenges/queue_with_stacks:
+
+Create a brand new PseudoQueue class. Do not use an existing Queue. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below), but will internally only utilize 2 Stack objects. Ensure that you create your class with the following methods:
+
+enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
+dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
+The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation. Instantiate these Stack objects in your PseudoQueue constructor.
+
+## Approach & Efficiency
+I imported my stacks class and used push in the enqueue methos and both push and pop in the dequeue method, essentially turning list one upsidedown to make list two, popping the top off, then flipping it back over and turning it back into list one.  
+
+## Solution
+![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/queue_with_stacks.jpg)
