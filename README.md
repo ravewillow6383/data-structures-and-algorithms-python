@@ -144,4 +144,21 @@ The Stack instances have only push, pop, and peek methods. You should use your o
 I imported my stacks class and used push in the enqueue methos and both push and pop in the dequeue method, essentially turning list one upsidedown to make list two, popping the top off, then flipping it back over and turning it back into list one.  
 
 ## Solution
-![white boarding append, insert_after and insert_before](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/queue_with_stacks.jpg)
+![white boarding push, pop, peek, enqueue and dequeue](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/queue_with_stacks.jpg)
+
+# challenges / fifo animal shelter
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+Implement the following methods:
+enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
+
+## Challenge
+Try to create clean, reusable methods that have the maximum O time performance
+
+## Approach & Efficiency
+I approached this in a similar way I approaced 'queues with stacks'. For dequeue, if the self.front value of the queue was equal to the pref arg, then I dequeued and returned that node. if it was not equal, then I dequeued that node and enqueued it into a new Queue. I then check the value of the new front Node and see if it is equal to the pref arg. This loop continues until we find a match. Once the match is found, I dequeue and return the node with the matching value. I then will dequeue from the 2nd queue that was created with the non matching node values and put all of those nodes back into their places in the original queue. 
+## API
+no APi used. 
+
+## Solution
+![white boarding fifo animal shelter queue](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/fifo_animal_shelter.jpg)
