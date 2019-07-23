@@ -22,6 +22,7 @@ def test_list():
 def test_extist():
     assert LinkedList
 
+
 def test_create():
     ll = LinkedList()
     assert ll
