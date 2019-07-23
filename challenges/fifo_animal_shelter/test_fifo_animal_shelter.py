@@ -32,6 +32,7 @@ def test_multiple_enqueues():
     assert new_queue.list_one.front.value is 'cat'
     assert new_queue.list_one.front.next.value is 'dog'
     assert new_queue.list_one.front.next.next.value is 'cat'
+    assert new_queue.list_one.back.value is 'dog'
 
 # testing dequeue:
 def test_dequeue():
