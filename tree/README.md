@@ -17,7 +17,7 @@ Write the following methods for a binary tree class:
 
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I used a recursive appoach for all of the above mentioned methods. Checking the value of the root, left child and right child in various orders depending on which method was being used. 
 
 ## API
-<!-- Description of each method publicly available in each of your trees -->
+No API used in this project.
