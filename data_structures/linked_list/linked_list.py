@@ -51,23 +51,22 @@ class LinkedList:
         last_node = last_node.next
       last_node.next = Node(value, None)
   
-  def insert_before(self, existing_node, new_node_value):
+  def insert_before(self, value, new_value):
       
-      new_node = Node(new_node_value, existing_node)
-      current = self.head
+        node = Node(new_value)
 
-      if current == None:
-          return 'No node with that value exists. You should make one.'
-      if self.head.value == existing_node:
-          new_node.next = self.head
-          self.head = new_node
-      current = self.head
-      while current.next != None:
-          if current.next.value == existing_node:
-            new_node.next = current.next
-            current.next = new_node
-          return
-      return 'No node'
+        if not self.head:
+            self.head = node
+        else:
+            current = self.head
+
+        while current.next:
+            if current.next.value == value:
+                node.next = current.next
+                current.next = node
+                break
+            else:
+                current = current.next
 
   def ll_kth_from_end(self, k):
     counter = 0
@@ -106,6 +105,6 @@ class LinkedList:
     return 'nada'      
 
 class Node:
-  def __init__(self, value, next):
+  def __init__(self, value, next=None):
       self.value = value
       self.next = next   
