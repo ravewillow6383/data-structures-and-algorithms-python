@@ -1,5 +1,5 @@
 from node import Node
-from tree import BinaryTree
+from tree import BinaryTree, BinarySearchTree
 import pytest
 
 @pytest.fixture()
@@ -40,11 +40,20 @@ def tree():
 
     return fir
 
-
-
 # Can successfully instantiate an empty tree
 def test_empty_tree():
     assert BinaryTree()
+
+def test_binary_search_exists():
+    assert BinarySearchTree()
+
+#Can add a new node to a binary search tree
+def test_add_one_node():
+    """Can add a node to a binary search tree"""
+    tree = BinarySearchTree()
+    tree.add(22)
+
+    assert tree.root.value == 22
 
 # Can successfully instantiate a tree with a single root node
 def test_single_root_node():
@@ -54,16 +63,22 @@ def test_single_root_node():
     assert fir.root
 
 
-
 # Can successfully add a left child and right child to a single root node
-# def test_add_children():
+def test_right_and_left_child_add():
+    tree = BinarySearchTree()
+    tree.add(45)
+    assert tree.root.value == 45
+    tree.add(30)
+    assert tree.root.left_child.value == 30
+    tree.add(52)
+    assert tree.root.right_child.value == 52
+
 
 # Can successfully return a collection from a preorder traversal
 def test_preorder(tree):
     expected = [1, 2, 4, 8, 9, 5, 10, 11, 3, 6, 12, 13, 7, 14, 15]
     actual = tree.pre_order()
     assert actual == expected
-
 
 # Can successfully return a collection from an inorder traversal
 def test_test_inorder(tree):

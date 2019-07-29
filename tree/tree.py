@@ -66,5 +66,68 @@ class BinaryTree:
 
         return results
         
-# class BinarySearchTree(BinaryTree):
+class BinarySearchTree(BinaryTree):
+    
+    def add(self, value):
+        node = Node(value)
+        self._add_node(node)
+
+    def _add_node(self, node, current=None):
+        """Method to add a node to a binary search tree"""
+        if self.root is None:
+            self.root = node
+
+        if current is None:
+            current = self.root
+
+        if current:
+            """
+            If new node value is less than current node value
+            """
+            if current.value > node.value:
+                if current.left_child is None:
+                    current.left_child = node
+                else:
+                    self._add_node(node, current.left_child)
+
+            """
+            If new node value is greater than current node value
+            """
+            if current.value < node.value:
+                if current.right_child is None:
+                    current.right_child = node
+                else:
+                    self._add_node(node, current.right_child)
+        
+    def contains(self, key, current=None): 
+        """
+        Edge Case: root is None
+        """
+        if self.root is None:
+            return False 
+
+        if current is None:
+            current = self.root
+
+        """
+        if value is found
+        """
+        if current.value is key:
+            return True
+        
+        """
+        if key is greater than current node value
+        """
+        if current.value < key:
+            self.contains(key, current.right_child)
+
+        """
+        # Key is smaller than current node value 
+        """
+        if current.value > key:
+            self.contains(key, current.left_child)
+
+        else:
+            return False 
+
     
