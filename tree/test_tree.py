@@ -40,6 +40,43 @@ def tree():
 
     return fir
 
+@pytest.fixture()
+def tree_search():
+    one = Node(1)
+    two = Node(2)
+    three = Node(3)
+    four = Node(4)
+    five = Node(5)
+    six = Node(6)
+    seven = Node(7)
+    eight = Node(8)
+    nine = Node(9)
+    ten = Node (10)
+    eleven = Node(11)
+    twelve = Node(12)
+    thirteen = Node(13)
+    fourteen = Node(14)
+    fifteen = Node(15)
+
+    fir = BinarySearchTree()
+    fir.root = seven
+    fir.add(one)
+    fir.add(two)
+    fir.add(three)
+    fir.add(four)
+    fir.add(five)
+    fir.add(six)
+    fir.add(eight)
+    fir.add(nine)
+    fir.add(ten)
+    fir.add(eleven)
+    fir.add(twelve)
+    fir.add(thirteen)
+    fir.add(fourteen)
+    fir.add(fifteen)
+    
+    return fir
+
 # Can successfully instantiate an empty tree
 def test_empty_tree():
     assert BinaryTree()
@@ -92,3 +129,4 @@ def test_post_order(tree):
     expected = [8, 9, 4, 10, 11, 5, 2, 12, 13, 6, 14, 15, 7, 3, 1]
     actual = tree.post_order()
     assert actual == expected
+
