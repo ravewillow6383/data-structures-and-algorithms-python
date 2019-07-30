@@ -1,11 +1,6 @@
 from tree import BinaryTree
 
 def fizz_buzz_tree(tree):
-    """
-    checking for edgecase
-    """
-    # if tree.root.value is None:
-    #     raise ValueError('This tree has no nodes!')
 
     def value_check(node):
         """
