@@ -1,4 +1,5 @@
 from node import Node
+from collections import deque
 
 class BinaryTree:
     def __init__(self):
@@ -65,6 +66,20 @@ class BinaryTree:
         visit(self.root)
 
         return results
+
+    def breadth_first(self):
+        lst = deque()
+        if self.root is None:
+            raise ValueError('this tree is empty')
+        elif self.root:
+            lst.appendleft(self.root)
+            while len(lst):
+                current = lst.pop()
+                if current.left_child:
+                    lst.appendleft(current.left_child)
+                if current.right_child:
+                    lst.appendleft(current.right_child)
+                print(current.value)
         
 class BinarySearchTree(BinaryTree):
     
@@ -98,6 +113,8 @@ class BinarySearchTree(BinaryTree):
                     current.right_child = node
                 else:
                     self._add_node(node, current.right_child)
+            
+
         
     def contains(self, key, current=None): 
         """
@@ -106,28 +123,30 @@ class BinarySearchTree(BinaryTree):
         if self.root is None:
             return False 
 
-        if current is None:
+        if self.root:
             current = self.root
 
-        """
-        if value is found
-        """
-        if current.value is key:
-            return True
-        
-        """
-        if key is greater than current node value
-        """
-        if current.value < key:
-            self.contains(key, current.right_child)
+        def visit(node):
 
-        """
-        # Key is smaller than current node value 
-        """
-        if current.value > key:
-            self.contains(key, current.left_child)
+            """
+            if value is found
+            """
+            if current.value is key:
+                return True
+            
+            """
+            if key is greater than current node value
+            """
+            if current.value < key:
+                self.contains(key, current.right_child)
 
-        else:
-            return False 
+            """
+            # Key is smaller than current node value 
+            """
+            if current.value > key:
+                self.contains(key, current.left_child)
 
+            else:
+                return False 
+        visit(self.root)
     

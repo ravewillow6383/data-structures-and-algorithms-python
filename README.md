@@ -197,3 +197,13 @@ I have to recurse the entire funtion checking the value of every node so the big
 ## Solution
 ![white boarding fizz_buzz tree](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/fizz_buzz_tree.jpg)
 
+## Challenge for 7/30/2019:
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach; print every visited node’s value.
+
+## Approach & Efficiency
+I decided to import deque from python collections and use the pop and append left mothods to enqueue and dequeue nodes from the tree onto the queue in order by width left to right. This will allow for an O(1) in enqueue and dequeue and an O of width in space.
+
+
+## Solution
+![white boarding breadth_first](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/breadth_first.jpg)
+
