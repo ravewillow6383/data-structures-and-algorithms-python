@@ -68,6 +68,9 @@ class BinaryTree:
         return results
 
     def breadth_first(self):
+        """
+        traversing and printing out values from the root down by width, left to right "breadth"
+        """
         lst = deque()
         if self.root is None:
             raise ValueError('this tree is empty')

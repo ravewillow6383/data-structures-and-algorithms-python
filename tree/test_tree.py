@@ -2,6 +2,23 @@ from node import Node
 from tree import BinaryTree, BinarySearchTree
 import pytest
 
+@pytest.fixture
+def tree_breadth():
+    three = Node(5)
+    three.left = Node(72)
+    three.right = Node(8)
+    three.left.left = Node(2)
+    three.left.right = Node(7)
+    three.right.right = Node(13)
+    three.right.left = Node(20)
+    tree.root = three
+
+    fir = BinaryTree()
+    fir.root = three
+
+    return fir
+
+
 @pytest.fixture()
 def tree():
     one = Node(1)
@@ -130,3 +147,13 @@ def test_post_order(tree):
     actual = tree.post_order()
     assert actual == expected
 
+
+#Breadth first tests:
+
+def test_breadth_first():
+   assert breadth_first
+
+   def test_tree_output(capsys, tree_breadth):
+    breadth_first(tree)
+    captured = capsys.readouterr()
+    assert captured.out == '3\n5\n15\n42\n7\n1\n13\n'
