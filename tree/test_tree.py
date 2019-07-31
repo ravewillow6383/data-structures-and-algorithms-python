@@ -150,10 +150,10 @@ def test_post_order(tree):
 
 #Breadth first tests:
 
-def test_breadth_first():
-   assert breadth_first
+def test_breadth_first(tree_breadth):
+   assert tree_breadth.breadth_first()
 
-   def test_tree_output(capsys, tree_breadth):
-    breadth_first(tree)
-    captured = capsys.readouterr()
-    assert captured.out == '3\n5\n15\n42\n7\n1\n13\n'
+def test_tree_output(capsys, tree_breadth):
+   tree_breadth.breadth_first()
+   captured = capsys.readouterr()
+   assert captured.out == '5\n72\n8\n2\n7\n13\n20\n'

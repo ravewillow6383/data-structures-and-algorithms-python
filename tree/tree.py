@@ -72,9 +72,9 @@ class BinaryTree:
         traversing and printing out values from the root down by width, left to right "breadth"
         """
         lst = deque()
-        if self.root is None:
-            raise ValueError('this tree is empty')
-        elif self.root:
+        # if self.root is None:
+        #     raise ValueError('this tree is empty')
+        if self.root:
             lst.appendleft(self.root)
             while len(lst):
                 current = lst.pop()
