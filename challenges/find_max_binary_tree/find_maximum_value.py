@@ -87,7 +87,22 @@ class BinaryTree:
                 lst.appendleft(current.left_child)
 
             if current.right:
-                lst.appendleft(current.right_child)  
+                lst.appendleft(current.right_child)
+            
+
+    def find_maximum_value(self):
+        val = self.root
+        lst = deque()
+        lst.appendleft(self.root)
+        while len(lst):
+            current = lst.pop()
+            if current.value >  val.value:
+                val = current
+            if current.left_child:
+                lst.appendleft(current.left_child)
+            if current.right_child:
+                lst.appendleft(current.right_child)
+        return val.value  
 
 class BinarySearchTree(BinaryTree):
     
