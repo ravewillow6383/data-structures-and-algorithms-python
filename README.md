@@ -197,3 +197,32 @@ I have to recurse the entire funtion checking the value of every node so the big
 ## Solution
 ![white boarding fizz_buzz tree](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/fizz_buzz_tree.jpg)
 
+## Challenge for 7/30/2019:
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach; print every visited node’s value.
+
+## Approach & Efficiency
+I decided to import deque from python collections and use the pop and append left mothods to enqueue and dequeue nodes from the tree onto the queue in order by width left to right. This will allow for an O(1) in enqueue and dequeue and an O of width in space.
+
+
+## Solution
+![white boarding breadth_first](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/breadth_first.jpg)
+
+## Challenge for 7/31/2019 (data-structures-and-algorithms/challenges/find_max_binary_tree):
+Write a method extending my binary tree class that traverses the tree and returns the max value of a node in the tree. 
+
+## Approach & Efficiency
+I wanted to try to use a breadth first traversal, just becausde I don't have very much practice with it. I import deque from python collections and use the pop and append left mothods to enqueue and dequeue nodes from the tree onto the queue in order by width left to right. I had a flag that I et to root and then compared value of that variable to each node as it was popped off of the deque. If the value of the popped node was higher, I set the flag to the popped variable value. At the end of the traversal I return the flag.value.
+
+## Solution
+![white boarding breadth_first](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/find_max_binary.jpg)
+
+
+#insertion sort located in challenges/insertion_sort:
+
+For each item starting at index 1 and moving through the range of the list:
+
+    - a index reference is assigned to the current index.
+    - the value of the item at the current index is stored in a temporary variable.
+    - while the current index reference is greater than 0 AND the value to the       left of the current index is larger than the value of the temporary variable,  the value where the temporary varable was previously is reassigned to the      value to the left, and the index reference is reassigned to one index prior.
+    - once either of the above conditions is not met, the value at the current       index reference is assigned to the temporary value.
+    - The list is returned. It has been sorted in-place.
