@@ -29,12 +29,13 @@ def merge(left, right, lst):
         k += 1
 
     if i == len(left):
-       for val in right[j:]:
+       for _ in right[j:]:
            lst[k] = right[j]
            j += 1
            k += 1
     else:
-       for val in left[i:]:
+       for _ in left[i:]:
            lst[k] = left[i]
            i += 1
            k += 1
+           
