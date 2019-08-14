@@ -1,10 +1,4 @@
-import pytest
-from insertion_sort import insertion_sort
-
-# @pytest.fixture()
-# def unsorted_lst():
-#     lst = [5, 2, 8, 1, 15]
-
+from merge_sort import merge_sort
 
 def test_randomly_unsorted_list():
     """An unsorted list returns sorted"""
@@ -12,7 +6,7 @@ def test_randomly_unsorted_list():
 
 
     expected = [1, 2, 5, 8, 15]
-    actual = insertion_sort(lst)
+    actual = merge_sort(lst)
     assert actual == expected
 
 
@@ -21,7 +15,7 @@ def test_sorted_list():
     lst = [1, 2, 3, 4, 5]
 
     expected = [1, 2, 3, 4, 5]
-    actual = insertion_sort(lst)
+    actual = merge_sort(lst)
     assert actual == expected
 
 def test_empty_list():
@@ -29,13 +23,5 @@ def test_empty_list():
     lst = []
 
     expected = []
-    actual = insertion_sort(lst)
-    assert actual == expected
-
-
-def test_single_item():
-    lst = [55]
-
-    expected = [55]
-    actual = insertion_sort(lst)
+    actual = merge_sort(lst)
     assert actual == expected
