@@ -217,7 +217,7 @@ I wanted to try to use a breadth first traversal, just becausde I don't have ver
 ![white boarding breadth_first](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/find_max_binary.jpg)
 
 
-#insertion sort located in challenges/insertion_sort:
+#insertion sort located in challenges/list_sorts/insertion_sort:
 
 For each item starting at index 1 and moving through the range of the list:
 
@@ -226,3 +226,6 @@ For each item starting at index 1 and moving through the range of the list:
     - while the current index reference is greater than 0 AND the value to the       left of the current index is larger than the value of the temporary variable,  the value where the temporary varable was previously is reassigned to the      value to the left, and the index reference is reassigned to one index prior.
     - once either of the above conditions is not met, the value at the current       index reference is assigned to the temporary value.
     - The list is returned. It has been sorted in-place.
+
+#merge sort located in challenges/list_sorts/merge_sort:
+The merge sort algorithm is a sorting algorithm that sorts a list by breaking it into half over and over until there are several lists that each only have one element. It then sorts 2 of the lists and merges themtogether, it does this with all of the single element lists, making sorted lists with two elements and repeats the process until there is one long sorted list. Typically, merge sort uses recursion.
