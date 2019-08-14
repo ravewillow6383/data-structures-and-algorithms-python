@@ -12,7 +12,7 @@ Analogy:
 Say you have a pack of dogs. There are five dogs. Each dog is a different size and has a different food bowl. You have taught the dogs a neat trick. All of the dogs sit in a line waiting for treats. When you say, 'Line up!' they have learned to one by one go down the line and get into a position in line where the dog on it's left is smaller and the dog on it's right is bigger. 
 One dog in particular, we'll call him Zero, is the alpha dog. He might be the smallest, he might be the biggest, we aren't sure, but he is the alpha. Because he is the alpha, he doesn't like to move. He insists that the other dogs get in order around him. He starts always starts out on the left, because he leads the pack. Knowing that Zero is not going to budge from his spot, but he will lay down so that you know he's already done with his part. You skip him and starting with the dog on the right of Zero give the command, 'Line up'! The smart dog immediately to the right of Zero, assesses the alpha to see if he's bigger or smaller and get's into his place in line(left for smaller and right if he's bigger). You give the 'sorted' dog a treat, have him lay down and have now move onto the next dog. You do this until all of the dogs are in order. That's an insertion sort! 
 
-![Image description](link-to-image)
+![insertion sort visual](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/challenges/insertion_sort/assets/insertion_sort.png)
 
 
 
@@ -34,3 +34,5 @@ For each item starting at index 1 and moving through the range of the list:
 Pseudocode
 
 Readings and References
+
+https://medium.com/basecs/inching-towards-insertion-sort-9799274430da
