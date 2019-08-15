@@ -80,16 +80,11 @@ While comparing values we follow these rules:
 
             - We will divide based on left and right of pivot.
 
-            - Recursively repeat all of the above steps on the two divided lists, first the left until the end indice gets swapped with it's left variable and it's pivot is sorted. Do 
-            
-            this until there is only a single element in each list.
+            - Recursively repeat all of the above steps on the two divided lists, first the left until the end indice gets swapped with it's left variable and it's pivot is sorted. Do this until there is only a single element in each list.
 
-            -Now that we have only a single elements in each list, we can begin to append the list back together in a sorted order until the left side is sorted and merged together with the originaal pivot.
+            - Repeat this process on the right side of our original long list after finishing with the left side.
 
-            - Repeat this process on the right side of our original lonf list after finishing with the left side.
-
-            - finally append two sorted lists together and you will have one sorted list.
-```
+            - finally we have a sorted list.
 
 
 # GeeksforGeeks visual:
