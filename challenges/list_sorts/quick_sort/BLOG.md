@@ -88,7 +88,8 @@ While comparing values we follow these rules:
 
             - Repeat this process on the right side of our original lonf list after finishing with the left side.
 
-            - finally append two sorted lists together and you will have one sorted list.```
+            - finally append two sorted lists together and you will have one sorted list.
+```
 
 
 # H1 GeeksforGeeks visual:
