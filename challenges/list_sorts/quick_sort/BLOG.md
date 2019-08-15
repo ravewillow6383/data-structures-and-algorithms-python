@@ -92,6 +92,6 @@ While comparing values we follow these rules:
 ```
 
 
-# H1 GeeksforGeeks visual:
+# GeeksforGeeks visual:
 
 [![quick sort algorithm](http://img.youtube.com/vi/PgBzjlCcFvc/0.jpg)](http://www.youtube.com/watch?v=PgBzjlCcFvc "Quick sort")
