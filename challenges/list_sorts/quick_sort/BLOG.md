@@ -85,6 +85,7 @@ While comparing values we follow these rules:
             - Repeat this process on the right side of our original long list after finishing with the left side.
 
             - finally we have a sorted list.
+```
 
 
 # GeeksforGeeks visual:
