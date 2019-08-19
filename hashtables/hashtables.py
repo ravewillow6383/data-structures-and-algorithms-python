@@ -6,6 +6,7 @@ class HashTable:
         self.buckets = [LinkedList()] * 1024
 
     def hash(self, key):
+        """a methos to assign a number which is consistently the same for each string given to it. integer is returned and used as index """
 
         char_sum = sum([ord(char) for char in key])
 
@@ -16,7 +17,7 @@ class HashTable:
         return index
 
     def add(self, key, value):
-
+        """method to add a new key, value pair to table"""
         index = self.hash(key)
 
         bucket = self.buckets[index]
@@ -24,6 +25,7 @@ class HashTable:
         bucket.insert({'key':key, 'value':value})
 
     def get(self, key):
+        """a method to retreive the value assigned to given key"""
 
         idx = self.hash(key)
         current = self.buckets[idx].head
@@ -37,7 +39,7 @@ class HashTable:
         raise ValueError('No such key exists')
 
     def contains(self, key):
-
+        """a method to see is key already exists in table"""
         idx = self.hash(key)
         current = self.buckets[idx].head
 
