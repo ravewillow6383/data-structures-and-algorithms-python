@@ -5,6 +5,19 @@ class HashTable:
     def __init__(self):
         self.buckets = [LinkedList()] * 1024
 
+    def __iter__(self):
+        keys = []
+
+        for bucket in self.buckets:
+            current = bucket.head
+
+            while current:
+                for key in current.val.keys():
+                    keys.append(key)
+                current = current._next
+
+        return iter(keys)
+
     def hash(self, key):
         """a methos to assign a number which is consistently the same for each string given to it. integer is returned and used as index """
 
