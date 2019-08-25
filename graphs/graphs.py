@@ -1,3 +1,5 @@
+from collections import deque
+
 class Graph:
 
     def __init__(self):
@@ -24,6 +26,29 @@ class Graph:
     def __len__(self):
         return len(self._vertices)
 
+    def breadth_first(self, root, operate):
+
+        q = deque()
+
+        q.appendleft(root)
+
+        to_reset = set()
+
+        while q:
+            current = q.pop()
+            current.visited = True
+            to_reset.add(current)
+
+            operate(current)
+
+            for edge in current.neighbors:
+                if not edge.vertex.visited:
+                    q.appendleft(edge.vertex)
+        
+        for vertex in to_reset:
+            vertex.visited = False
+
+
 class Edge:
     def __init__(self, vertex, weight = 0):
         self.vertex = vertex
@@ -34,3 +59,4 @@ class Vertex:
     def __init__(self, value):
         self.value = value
         self.neighbors = []
+        self.visited = False
