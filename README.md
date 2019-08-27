@@ -305,6 +305,7 @@ and should include the following methods:
 *Len()
 *Returns the total number of nodes in the graph
 
+
 # breadth first graph traversal 8/26/2019
 
 # Build a method onto my graph class that implements a breadth first traversal and returns a list of the values held within the vertices
@@ -318,3 +319,4 @@ I wrote a method that instantiates a deque, after importing deque from collectio
 ## Solution
 ![white boarding breadth first traversal of a graph](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/breadth_first_graph.jpg
 )
+
