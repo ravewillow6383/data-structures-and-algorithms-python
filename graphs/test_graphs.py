@@ -102,6 +102,3 @@ def test_breadth_first():
     g.breadth_first(dogs, visit)
 
     assert visited == ['dogs', 'cats', 'ferrets']
-
-
-
