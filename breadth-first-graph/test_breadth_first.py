@@ -1,9 +1,6 @@
 import pytest
 from breadth_first import Graph
 
-def test_exists():
-    assert breaad_first
-    
 def test_breadth_first():
     g = Graph()
     dogs = g.add_vertex('dogs')
@@ -20,4 +17,34 @@ def test_breadth_first():
     g.breadth_first(dogs, visit)
 
     assert visited == ['dogs', 'cats', 'ferrets']
+
+def test_single_vertex():
+    g = Graph()
+    dogs = g.add_vertex('dogs')
+
+    visited = []
+
+    def visit(vertex):
+        visited.append(vertex.value)
+
+    g.breadth_first(dogs, visit)
+
+    assert visited == ['dogs']
+
+
+def test_empty():
+    g= Graph()
+    dogs = g.add_vertex('')
+
+    visited = []
+
+    def visit(vertex):
+        visited.append(vertex.value)
+
+
+    g.breadth_first(dogs, visit)
+
+    assert visited == ['']
+
+    
 

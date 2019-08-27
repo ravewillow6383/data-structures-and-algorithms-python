@@ -207,3 +207,114 @@ I decided to import deque from python collections and use the pop and append lef
 ## Solution
 ![white boarding breadth_first](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/breadth_first.jpg)
 
+## Challenge for 7/31/2019 (data-structures-and-algorithms/challenges/find_max_binary_tree):
+Write a method extending my binary tree class that traverses the tree and returns the max value of a node in the tree. 
+
+## Approach & Efficiency
+I wanted to try to use a breadth first traversal, just becausde I don't have very much practice with it. I import deque from python collections and use the pop and append left mothods to enqueue and dequeue nodes from the tree onto the queue in order by width left to right. I had a flag that I et to root and then compared value of that variable to each node as it was popped off of the deque. If the value of the popped node was higher, I set the flag to the popped variable value. At the end of the traversal I return the flag.value.
+
+## Solution
+![white boarding breadth_first](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/find_max_binary.jpg)
+
+
+#insertion sort located in challenges/list_sorts/insertion_sort:
+
+For each item starting at index 1 and moving through the range of the list:
+
+    - a index reference is assigned to the current index.
+    - the value of the item at the current index is stored in a temporary variable.
+    - while the current index reference is greater than 0 AND the value to the       left of the current index is larger than the value of the temporary variable,  the value where the temporary varable was previously is reassigned to the      value to the left, and the index reference is reassigned to one index prior.
+    - once either of the above conditions is not met, the value at the current       index reference is assigned to the temporary value.
+    - The list is returned. It has been sorted in-place.
+
+#merge sort located in challenges/list_sorts/merge_sort:
+The merge sort algorithm is a sorting algorithm that sorts a list by breaking it into half over and over until there are several lists that each only have one element. It then sorts 2 of the lists and merges themtogether, it does this with all of the single element lists, making sorted lists with two elements and repeats the process until there is one long sorted list. Typically, merge sort uses recursion.
+
+# quicksort located in challenges/list_sorts/quick_sort:
+Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
+
+Always pick first element as pivot.
+Always pick last element as pivot (implemented below)
+Pick a random element as pivot.
+Pick median as pivot.
+The key process in quickSort is partition(). 
+
+# Hash Tables located in hashtables folder
+
+Hash tables are a type of data structure in which the address or the index value of the data element is generated from a hash function. That makes accessing the data faster as the index value behaves as a key for the data value. 
+
+## Challenge
+Write tests to prove the following functionality:
+
+    *Adding a key/value to your hashtable results in the value being in the data structure
+    *Retrieving based on a key returns the value stored
+    *Successfully returns null for a key that does not exist in the hashtable
+    *Successfully handle a collision within the hashtable
+    *Successfully retrieve a value from a bucket within the hashtable that has a collision
+    *Successfully hash a key to an in-range value
+
+## Approach & Efficiency
+Big O was O(1) for both space and time. I implemented a linked list to hold key value pairs at each index of a list. if there was a collision in the list then my add method on the hashtable which uses the insert method from the linked list will add a new node to the linked list at the given index hashed out for that key value pair.
+
+
+## Challenge for 8/19/2019 (located in ./repeated_word):
+Write a function that accepts a lengthy string parameter.
+Without utilizing any of the built-in library methods available to your language (which the exception of Count()), return the first word to occur more than once in that provided string.
+
+## Approach & Efficiency
+Big O was O(n) as I had to iterate through the whole string to find at least 1 occurance of each word before I could look for a second. I split the string at the spaces, then I imported Count() from collections, which creates a hashtable out of any iterable input and keeps track of each instance of each key within the hashtable. From there I iterated through the split string and returned the first word in count that got over 1 count. One thing I had to modify to get my test to pass was add a lower() method onto my split method because it wasn't recognizing words that were the same if one of them started with an uppercase.
+
+
+## Solution
+![white boarding repeated_word](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/repeated_word.jpg)
+
+
+## Challenge for 8/20/2019 (located in ./tree_insertion):
+Write a function called tree_intersection that takes two binary tree parameters.
+Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
+
+## Approach & Efficiency
+I decided to write a recursive function with two helper functions. The first being walk, which did an in order traversal of every node in the first tree. the second was compare, which compared the value of the node from the walk function to each value in the nodes of the second tree. If a value was found more that once it was pushed into an empty list. Once both traversals were finished I'll return the list. Because we're visiting each node this will be an O(n)
+
+
+## Solution
+![white boarding tree_insertion](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/tree_insertion.jpg)
+
+# graph 8/25/19 
+
+Implement your own Graph. The graph should be represented as an adjacency list, 
+
+and should include the following methods:
+
+
+*AddNode()
+*Adds a new node to the graph
+*Takes in the value of that node
+*Returns the added node
+*AddEdge()
+*Adds a new edge between two nodes in the graph
+*Include the ability to have a “weight”
+*Takes in the two nodes to be connected by the edge
+*Both nodes should already be in the Graph
+*GetNodes()
+*Returns all of the nodes in the graph as a collection (set, list, or similar)
+*GetNeighbors()
+*Returns a collection of nodes connected to the given node
+*Takes in a given node
+*Include the weight of the connection in the returned collection
+*Len()
+*Returns the total number of nodes in the graph
+
+# breadth first graph traversal 8/26/2019
+
+# Build a method onto my graph class that implements a breadth first traversal and returns a list of the values held within the vertices
+
+## Challenge
+Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+## Approach & Efficiency
+I wrote a method that instantiates a deque, after importing deque from collections in order to improve my big O on enqueues. I also set a flag to each vertex called, 'visited'. The vertex begin with that flag set to false, but after we look at the vertex and put it into our deque and inpect it for neighbors, we change that flag to True so that we know not to visit it again. After we enqueue, or appendleft in our case, allof the neighbors to the current vertex, we add the vertex value into a set that we instantiated as empty before begininning this process. We continue to dequeu (or pop for our deque), check for neighbors, enqueue neighbors and add to set until eventually all of our flags within our graph are set to true and we know we have added all values to our set. Then we loop through our set and reset all of our flags back to False, then we return our set which now contains all of the values from the vertices within out graph. 
+
+## Solution
+![white boarding breadth first traversal of a graph](https://github.com/ravewillow6383/data-structures-and-algorithms-python/blob/master/assets/breadth_first_graph.jpg
+)
