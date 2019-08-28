@@ -1,5 +1,5 @@
 from queues import Queue
-from graph import Graph
+from graph import Graph, Vertex, Edge
 
 
 def direct_flight(g, lst):

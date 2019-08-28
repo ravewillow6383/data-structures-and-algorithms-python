@@ -1,6 +1,6 @@
 from queues import Queue
 from get_edge import direct_flight
-from graph import Graph
+from graph import Graph, Vertex, Edge
 import pytest
 
 def test_exists():
