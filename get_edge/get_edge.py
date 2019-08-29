@@ -1,23 +1,24 @@
-from queues import Queue
+from collections import deque
 from graph import Graph, Vertex, Edge
 
 
 def direct_flight(g, lst):
     g = Graph()
     cost = 0
-    q = Queue()
+    q = deque()
     
     for city in lst:
-        q.enqueue(city)
+        q.appendleft(city)
     
     while q:
-        current = q.dequeue()
+        current = q.pop()
         neighs = g.get_neighbors(current)
         n = len(neighs) - 1
 
         for i in range(0, n):
             if neighs[i].vertex.value == q.front.value:
                 cost += neighs[i].weight
-            else:
-                return f'{False}, $0'
+            
+        return f'{False}, $0'
+
     return f'{True}, ${cost}'
