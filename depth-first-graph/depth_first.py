@@ -1,6 +1,5 @@
 from collections import deque
-from stacks import Stack
-
+from stacks import Stack, Node
 class Graph:
 
     def __init__(self):

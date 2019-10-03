@@ -1,5 +1,4 @@
 from collections import deque
-from stacks import Stack
 
 class Graph:
 
@@ -48,25 +47,6 @@ class Graph:
         
         for vertex in to_reset:
             vertex.visited = False
-    
-    def depth_first(self, root):
-        s = Stack()
-        visited = []
-        vertices = []
-
-        s.push(root)
-        visited.append(root)
-
-        while s.top:
-            current = s.top
-            vertices.append(current)
-            neighs = self.get_neighbors(current)
-            for neighbor[0] in neighs:
-                if neighbor[0] not in visited:
-                    s.push(neighbor[0])
-                    visited.append(neighbor[0])
-        return visited
-
 
 
 class Edge:
