@@ -48,3 +48,4 @@ def test_empty():
 
     
 
+    assert visited == ['dogs', 'cats', 'ferrets']
